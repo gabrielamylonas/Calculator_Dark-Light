@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: 0;
+    transition: all 0.5s ease;
+}
+
+:root {
+    --bg: linear-gradient(to bottom right, rgba(79, 51, 176, 1), rgba(210, 53, 165));
+    --primary-light: #f7f7e7;
+    --primary-dark: #071115;
+    --secondary-light: #0A1E23;
+    --number-dark: #113139;
+    --number-light: #87e7ff;
+    --operator-dark: #2E1F39;
+    --operator-light: #ff94fb;
+    --clear-dark: #2D191E;
+    --clear-light: #ff92ad;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-image: var(--bg)
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.calculator {
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #000;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: var(--number-light);
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+    margin: 1.25rem;
+	position: relative;
+	height: 26px;
+	width: 50px;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: var(--primary-light);
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+.fa-moon {
+	color: var(--number-dark);
+}
+
+.fa-sun {
+	color: var(--operator-light);
+}
+
+#display {
+    margin: 0 10px;
+    height: 150px;
+    width: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+    font-weight: 600;
+}
+
+
+#display::-webkit-scrollbar {
+    display: block;
+    height: 3px;
+}
+
+button {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    font-weight: 500;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#equal {
+    height: 130px;
+}
+
+/* light theme */
+
+.calculator{
+    background-color: var(--primary-light);
+}
+
+#display {
+    color: var(--secondary-light);
+}
+
+#clear {
+    background-color: var(--clear-light);
+    color: var(--clear-dark);
+}
+
+.btn__number {
+    background-color: var(--number-light);
+    color: var(--number-dark);
+}
+
+.btn__operator {
+    background-color: var(--operator-light);
+    color: var(--operator-dark);
+}
+
+/* dark theme */
+
+.dark {
+    background-color: var(--primary-dark);
+}
+
+.dark #display {
+    color: var(--primary-light);
+}
+
+.dark #clear {
+    background-color: var(--clear-dark);
+    color: var(--clear-light);
+}
+
+.dark .btn__number {
+    background-color: var(--number-dark);
+    color: var(--number-light);
+}
+
+.dark .btn__operator {
+    background-color: var(--operator-dark);
+    color: var(--operator-light);
+}
+
+.dark .ball {
+    background-color: var(--primary-dark);
+}
+
+
+.dark .label {
+    background-color: var(--operator-dark);
+}
